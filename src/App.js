@@ -1,6 +1,11 @@
+import Header from "./components/Header";
+import FeedbackList from "./components/FeedbackList";
+
 function App() {
   return (
-    <div className="App">
+    <div>
+    <Header />
+    <FeedbackList />
     </div>
   );
 }
