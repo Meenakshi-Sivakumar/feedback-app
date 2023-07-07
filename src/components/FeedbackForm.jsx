@@ -4,7 +4,7 @@ import Card from "./shared/Card";
 import Button from "./shared/Button";
 import RatingSelect from "./RatingSelect";
 
-function FeedbackForm() {
+function FeedbackForm({handleAdd}) {
     const [text, setText] = useState('')
     const [rating, setRating] = useState(10);
     const [btnDisabled, setBtnDisabled] = useState(true)
@@ -26,13 +26,14 @@ function FeedbackForm() {
       }
     const handleSubmit = (e) => {
       e.preventDefault();
-      const feedback = {
-        text,
-        rating
+      if(text.trim().length > 10){
+        const newFeedback = {
+          text,
+          rating
+        }
+        newFeedback.id = uuidv4();
+        handleAdd(newFeedback);
       }
-      feedback.id = uuidv4();
-      
-      console.log(feedback)
     }
 
     return <Card>
