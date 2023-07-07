@@ -14,8 +14,9 @@ function App() {
     setFeedback([newFeedback, ...feedback])
   }
   const editFeedback = () => {
-
-  }
+    
+  } 
+  // todo edit rating 
   return (
     <div>
     <Header />
