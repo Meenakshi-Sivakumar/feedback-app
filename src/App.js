@@ -10,6 +10,9 @@ function App() {
   const deleteFeedback = (id) => {
     setFeedback(feedback.filter((item) => item.id !== id ))
   }
+  const handleAdd = (newFeedback) => {
+    setFeedback([newFeedback, ...feedback])
+  }
   const editFeedback = () => {
 
   }
@@ -17,7 +20,7 @@ function App() {
     <div>
     <Header />
     <div className="container">
-    <FeedbackForm />
+    <FeedbackForm handleAdd={handleAdd}/>
     <FeedbackStats feedback={feedback} />
     {(!feedback || feedback.length === 0)?
        (<p>No feedback yet</p>) 
