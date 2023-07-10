@@ -6,7 +6,7 @@ This is a React app for leaving feedback for a product or service. It utilizes R
 ![Feedback App Screenshot](Capture.PNG)
 ## Live Demo
 
-Check out the live demo of the Feedback App: [Live Demo]([Capture.PNG](https://master--tubular-cuchufli-d1236b.netlify.app/))
+Check out the live demo of the Feedback App: [Live Demo](https://master--tubular-cuchufli-d1236b.netlify.app/)
 
 ## Features
 
