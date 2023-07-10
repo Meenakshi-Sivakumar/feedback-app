@@ -33,12 +33,12 @@ function App() {
               <>
               <div className="container">
               <FeedbackForm handleAdd={handleAdd}/>
-              <FeedbackStats feedback={feedback} />
+              <FeedbackStats />
               {(!feedback || feedback.length === 0)?
                 (<p>No feedback yet</p>) 
                   : 
                 (
-                    <FeedbackList feedback = {feedback} deleteFeedback={deleteFeedback} editFeedback={editFeedback}/>
+                    <FeedbackList deleteFeedback={deleteFeedback} editFeedback={editFeedback}/>
                 )} 
               </div>
               </>
