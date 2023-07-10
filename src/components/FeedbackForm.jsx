@@ -33,6 +33,7 @@ function FeedbackForm({handleAdd}) {
         }
         newFeedback.id = uuidv4();
         handleAdd(newFeedback);
+        setText('')
       }
     }
 
