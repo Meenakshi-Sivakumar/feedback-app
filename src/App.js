@@ -5,8 +5,7 @@ import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
 import AboutPage from "./pages/AboutPages";
 import AboutIconLink from "./components/AboutIconLink";
-import FeedbackContext, { FeedbackProvider } from "./context/FeedbackContext";
-import { useContext } from "react";
+import { FeedbackProvider } from "./context/FeedbackContext";
 
 function App() {
   
