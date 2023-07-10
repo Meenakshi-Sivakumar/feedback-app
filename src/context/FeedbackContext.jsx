@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-const FeedbackContext createContext()
+const FeedbackContext = createContext()
 
 export const FeedbackProvider = ({children}) => {
     const [feedback, setFeedback] = useState([
