@@ -1,7 +1,10 @@
 import FeedbackItem from './FeedbackItem';
-import {motion, AnimatePresence} from 'framer-motion';
+import { useContext } from 'react';
+import FeedbackContext from '../context/FeedbackContext';
 
-function FeedbackList ({ feedback, deleteFeedback , editFeedback }) {
+
+function FeedbackList ({ deleteFeedback , editFeedback }) {
+  const {feedback} = useContext(FeedbackContext);
     return  (
           <div className='feedback-list'>
             {feedback.map((item) => (
