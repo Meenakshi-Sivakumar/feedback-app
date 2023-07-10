@@ -7,6 +7,7 @@ import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
 import AboutPage from "./pages/AboutPages";
 import AboutIconLink from "./components/AboutIconLink";
+import { FeedbackProvider } from "./context/FeedbackContext";
 
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
@@ -21,31 +22,33 @@ function App() {
   } 
   // todo edit rating 
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route 
-          exact
-          path="/" 
-          element={
-            <>
-            <div className="container">
-            <FeedbackForm handleAdd={handleAdd}/>
-            <FeedbackStats feedback={feedback} />
-            {(!feedback || feedback.length === 0)?
-              (<p>No feedback yet</p>) 
-                : 
-              (
-                  <FeedbackList feedback = {feedback} deleteFeedback={deleteFeedback} editFeedback={editFeedback}/>
-              )} 
-            </div>
-            </>
-            } 
-          />
-        <Route path="/about" element={<AboutPage />}/>
-      </Routes>
-      <AboutIconLink />
-    </Router>
+    <FeedbackProvider>
+      <Router>
+        <Header />
+        <Routes>
+          <Route 
+            exact
+            path="/" 
+            element={
+              <>
+              <div className="container">
+              <FeedbackForm handleAdd={handleAdd}/>
+              <FeedbackStats feedback={feedback} />
+              {(!feedback || feedback.length === 0)?
+                (<p>No feedback yet</p>) 
+                  : 
+                (
+                    <FeedbackList feedback = {feedback} deleteFeedback={deleteFeedback} editFeedback={editFeedback}/>
+                )} 
+              </div>
+              </>
+              } 
+            />
+          <Route path="/about" element={<AboutPage />}/>
+        </Routes>
+        <AboutIconLink />
+      </Router>
+    </FeedbackProvider>
   );
 }
 
