@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import Card from "./shared/Card";
 import Button from "./shared/Button";
@@ -11,7 +11,15 @@ function FeedbackForm() {
     const [btnDisabled, setBtnDisabled] = useState(true)
     const [message, setMessage] = useState('')
     
-    const {handleAdd} = useContext(FeedbackContext);
+    const {handleAdd, feedbackEdit, updateFeedback} = useContext(FeedbackContext);
+
+    useEffect(() => {
+      if(feedbackEdit.edit === true) {
+        setBtnDisabled(false)
+        setText(feedbackEdit.item.text)
+        setRating(feedbackEdit.item.rating)
+      }
+    },[feedbackEdit])
 
     const handleTextChange = ({ target: { value } }) => { 
         if (value === '') {
@@ -35,7 +43,11 @@ function FeedbackForm() {
           rating
         }
         newFeedback.id = uuidv4();
-        handleAdd(newFeedback);
+        if(feedbackEdit.edit === true) {
+          updateFeedback(feedbackEdit.item.id, newFeedback)
+        }else{
+          handleAdd(newFeedback);
+        }
         setText('')
       }
     }
