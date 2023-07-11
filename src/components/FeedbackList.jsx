@@ -4,7 +4,7 @@ import FeedbackContext from '../context/FeedbackContext';
 
 
 function FeedbackList () {
-  const {feedback} = useContext(FeedbackContext);
+  const {feedback, isLoading} = useContext(FeedbackContext);
     return  (
       (!feedback || feedback.length === 0)?
                 (<p>No feedback yet</p>) 
