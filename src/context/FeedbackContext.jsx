@@ -11,7 +11,7 @@ export const FeedbackProvider = ({children}) => {
     })
 
     useEffect(() => {
-
+      fetchFeedback();
     },[])
 
     //fetch data
