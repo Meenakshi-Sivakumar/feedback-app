@@ -4,9 +4,6 @@
 This is a React app for leaving feedback for a product or service. It utilizes React routers for navigation and explores the concept of context for managing feedback data. The app features a user-friendly and visually appealing UI.
 
 ![Feedback App Screenshot](Capture.PNG)
-## Live Demo
-
-Check out the live demo of the Feedback App: [Live Demo](https://master--tubular-cuchufli-d1236b.netlify.app/)
 
 ## Features
 
